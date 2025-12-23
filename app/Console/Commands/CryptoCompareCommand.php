@@ -43,7 +43,7 @@ class CryptoCompareCommand extends Command
         $this->info('Max price: '.$comparedPairs->sell->price);
         $this->info('Stock market: '.$comparedPairs->sell->stockMarket->value);
         $this->line('');
-        $this->info('Percent of profit: '.$comparedPairs->profitPercent);
+        $this->info('Percent of profit: '.round($comparedPairs->profitPercent, 4));
         $this->line('-------------------------------------------');
     }
 }
