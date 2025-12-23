@@ -20,7 +20,7 @@ class JuExchangeService implements ExchangeAdapterContract
         $this->pair = $currency1.'_'.$currency2;
 
         try {
-            $this->response = Http::baseUrl('https://api.jucoin.com')
+            $this->response = Http::baseUrl(config('exchange.ju_base_url', 'https://api.jucoin.com'))
                 ->get('/v1/spot/public/ticker', [
                     'symbol' => $currency1.'_'.$currency2,
                 ])->json();

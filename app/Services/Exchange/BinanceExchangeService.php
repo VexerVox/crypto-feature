@@ -20,7 +20,7 @@ class BinanceExchangeService implements ExchangeAdapterContract
         $this->pair = $currency1.'_'.$currency2;
 
         try {
-            $this->response = Http::baseUrl('https://api.binance.com')
+            $this->response = Http::baseUrl(config('exchange.binance_base_url', 'https://api.binance.com'))
                 ->get('/api/v3/ticker/price', [
                     'symbol' => $currency1.$currency2,
                 ])->json();

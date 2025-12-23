@@ -20,7 +20,7 @@ class PoloniexExchangeService implements ExchangeAdapterContract
         $this->pair = $currency1.'_'.$currency2;
 
         try {
-            $this->response = Http::baseUrl('https://futures-api.poloniex.com')
+            $this->response = Http::baseUrl(config('exchange.poloniex_base_url', 'https://futures-api.poloniex.com'))
                 ->get('/api/v2/ticker', [
                     'symbol' => $currency1.$currency2.'PERP',
                 ])->json();

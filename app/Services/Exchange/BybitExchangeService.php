@@ -20,7 +20,7 @@ class BybitExchangeService implements ExchangeAdapterContract
         $this->pair = $currency1.'_'.$currency2;
 
         try {
-            $this->response = Http::baseUrl('https://api.bybit.com')
+            $this->response = Http::baseUrl(config('exchange.bybit_base_url', 'https://api.bybit.com'))
                 ->get('/v5/market/tickers', [
                     'category' => 'spot',
                     'symbol' => $currency1.$currency2,

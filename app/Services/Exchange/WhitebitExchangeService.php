@@ -20,8 +20,8 @@ class WhitebitExchangeService implements ExchangeAdapterContract
         $this->pair = $currency1.'_'.$currency2;
 
         try {
-            $this->response = Http::baseUrl('https://whitebit.com/')
-                ->get('api/v1/public/ticker', [
+            $this->response = Http::baseUrl(config('exchange.whitebit_base_url', 'https://whitebit.com'))
+                ->get('/api/v1/public/ticker', [
                     'market' => $this->pair,
                 ])->json();
         } catch (ConnectionException $e) {
