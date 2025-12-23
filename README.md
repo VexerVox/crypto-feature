@@ -1,20 +1,16 @@
 ## Setup:
 
 ```shell
+git clone git@github.com:VexerVox/crypto-feature.git;
+cd crypto-feature;
 cp .env.example .env;
 docker compose up -d;
 ```
 
-### For commands:
+### Run command:
 ```shell
-docker exec -it iphoneshop-php bash;
-```
-
-### Queue:
-```shell
-docker exec -it iphoneshop-php bash;
-php artisan queue:work;   # for production
-php artisan queue:listen; # for development
+docker exec -it cryptofeature-php bash;
+php artisan crypto:compare BTC USDT;
 ```
 
 ## Task:
