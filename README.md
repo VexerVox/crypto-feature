@@ -15,16 +15,18 @@ php artisan crypto:compare BTC USDT;
 
 ## Task:
 
-### Розробити механізм для аналізу цін на наступних криптобиржах:
+Develop a mechanism for analyzing prices on the following cryptocurrency exchanges:
+
 - binance.com
-- jbex.com
+- ju.com
 - poloniex.com
 - bybit.com
 - whitebit.com
 
-### Потрібно:
-- знайти необхідні АПІ ендпоинт для отримання актуальних цін між можливими валютними парами для всіх вищевказаних бірж;
-- валютні пари мають збігатись на всіх вищевказаних криптобиржах (якщо якоїсь валютної пари немає на одній з бірж - ця валютна пара має бути пропущена та не аналізуватись);
-- розробити консольну команду для отримання найменшої і найвищої ціни між обраною користувачем валютною парою, та показати на якій саме біржі даний курс (до прикладу - BTC/USDT, відобразити курс та назву біржі);
-### Додатково:
-- розробити консольну команду, яка формує список валютних пар з % прибутку, тобто система має знайти найменшу ціну валютної пари на біржа1, найвищу ціну валютної пари на біржа2, розрахувати % прибутку при купівлі валюти на біржі1 та продажу валюти на біржі2.
+Requirements:
+- Find the required API endpoints to obtain current prices for all available currency pairs on each of the exchanges listed above.
+- Currency pairs must be the same across all the listed exchanges (if a particular currency pair is not available on one of the exchanges, that pair should be skipped and not analyzed).
+- Develop a console command to retrieve the lowest and highest price for a user-selected currency pair and display which exchange offers that price (for example, for BTC/USDT, show the price and the exchange name).
+
+Additionally:
+- Develop a console command that generates a list of currency pairs with a profit percentage. The system should find the lowest price of a currency pair on exchange A, the highest price of the same pair on exchange B, and calculate the profit percentage when buying on exchange A and selling on exchange B.
